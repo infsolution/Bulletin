@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BulletinActivity">
 
-    <TextView android:text="Hello World!"
+    <TextView
+        android:id="@+id/t_titulo"
+        android:text="@string/txt_titulo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="18pt"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        />
+    <TextView
+        android:id="@+id/t_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_welcome"/>
+    <Button
+        android:text="@string/bt_avancar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="nextBol"
+        />
 </LinearLayout>

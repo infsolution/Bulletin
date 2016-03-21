@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Bulletin</string>
+    <string name="txt_titulo">Boletim</string>
+    <string name="txt_welcome">Bem vindo</string>
+    <string name="bt_avancar">Avançar</string>
+    <string name="txt_cad_nome">Nome:</string>
+    <string name="txt_cad_matr">Matricula:</string>
+    <string name="txt_cad_titulo">Cadastro de pessoa</string>
+    <string name="bt_cadastro">Cadastrar</string>
 </resources>

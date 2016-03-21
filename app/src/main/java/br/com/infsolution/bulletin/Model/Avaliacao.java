@@ -8,14 +8,14 @@ import java.util.List;
 /**
  * Created by Cicero on 19/03/2016.
  */
-public abstract class Teste {
+public abstract class Avaliacao {
     private Materia materia;
     private DateFormat date;
     private List<String> conteudo = new ArrayList<>();
     private  String obs;
     private String tipo;
     private float nota;
-    public Teste(){
+    public Avaliacao(){
 
     }
 
