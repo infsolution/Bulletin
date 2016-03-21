@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Cicero on 19/03/2016.
  */
-public class Teste {
+public abstract class Teste {
     private Materia materia;
     private DateFormat date;
     private List<String> conteudo = new ArrayList<>();
