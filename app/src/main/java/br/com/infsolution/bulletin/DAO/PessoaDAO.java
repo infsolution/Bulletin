@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.infsolution.bulletin.Model.Pessoa;
 
 /**
@@ -13,46 +16,73 @@ import br.com.infsolution.bulletin.Model.Pessoa;
  */
 public class PessoaDAO extends SQLiteOpenHelper{
     public PessoaDAO(Context context) {
-        super(context, "Boletin.db", null, 1);
+        super(context, "Boletim.db", null, 3);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql="CREATE TABLE pessoa"+
+        String sql="CREATE TABLE pessoas"+
                 "(id_pessoa INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "nome VARCHAR(45) NOT NULL, matricula VARCHAR(12));";
+                "nome VARCHAR (45), matricula VARCHAR (12));";
         db.execSQL(sql);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE IF EXISTS pessoa;";
+        String sql = "DROP TABLE IF EXISTS pessoas;";
         db.execSQL(sql);
         onCreate(db);
     }
     public void inserir(Pessoa pessoa){
         ContentValues ps = new ContentValues();
         ps.put("nome", pessoa.getNome());
-        ps.put("montadora", pessoa.getMatricula());
-
-        getWritableDatabase().insert("pessoa", null, ps);
+        ps.put("matricula", pessoa.getMatricula());
+        getWritableDatabase().insert("pessoas", null, ps);
 
     }
-
-    public Pessoa newPessoa(){
-        String sql="SELECT * pessoa";
+    public List<Pessoa> lista(){
+        List<Pessoa> pessoas = new ArrayList<>();
+        String sql = "SELECT * FROM pessoas;";
         Cursor c = getReadableDatabase().rawQuery(sql,null);
-        c.moveToFirst();
-        int id_pessoa = c.getInt(c.getColumnIndex("id_pessoa"));
-        String nome = c.getString(c.getColumnIndex("nome"));
-        String matricula = c.getString(c.getColumnIndex("matricula"));
+
+        while (c.moveToNext()){
+            int id = c.getInt(c.getColumnIndex("id_pessoa"));
+            String nome = c.getString(c.getColumnIndex("nome"));
+            String matricula = c.getString(c.getColumnIndex("matricula"));
+            Pessoa p = new Pessoa(nome, matricula);
+            p.setId(id);
+            pessoas.add(p);
+        }
+
+        return pessoas;
+    }
+    public String setWelcome(){
+        String sql = "select * from pessoas;";
+        Cursor c = getReadableDatabase().rawQuery(sql,null);
+        String nome;
+        if(c.moveToNext()) {
+             nome = c.getString(c.getColumnIndex("nome"));
+        }else{
+            nome="Visitante!";
+        }
+        return nome;
+    }
+    public Pessoa buscPessoa(){
+        String nome="";
+        String matricula="";
+        String sql="SELECT * FROM pessoas;";
+        Cursor c = getReadableDatabase().rawQuery(sql, null);
+        if(c.moveToFirst()){
+            int id = c.getInt(c.getColumnIndex("id_pessoa"));
+            nome = c.getString(c.getColumnIndex("nome"));
+            matricula = c.getString(c.getColumnIndex("matricla"));
+        }
         Pessoa pessoa = new Pessoa(nome,matricula);
-        pessoa.setId(id_pessoa);
         return pessoa;
     }
 
     public  void delPessoa(Pessoa pessoa){
         String [] dados = {""+pessoa.getId()};
-        getWritableDatabase().delete("pessoa","=id_pessoa",dados);
+        getWritableDatabase().delete("pessoa","id_pessoa = ?",dados);
     }
 }

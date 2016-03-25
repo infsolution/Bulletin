@@ -6,17 +6,29 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 import br.com.infsolution.bulletin.DAO.PessoaDAO;
 import br.com.infsolution.bulletin.Model.Pessoa;
 
 public class CadPessoa extends AppCompatActivity {
-
+    private Pessoa pessoa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cad_pessoa);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     public void newCadPessoa(View v){
@@ -30,7 +42,6 @@ public class CadPessoa extends AppCompatActivity {
         pesDao.inserir(pessoa);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Pessoa cadastrada ;)");
-
         builder.show();
     }
 }

@@ -4,6 +4,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.List;
+
+import br.com.infsolution.bulletin.DAO.PessoaDAO;
+import br.com.infsolution.bulletin.Model.Pessoa;
 
 public class BulletinActivity extends AppCompatActivity {
 
@@ -12,8 +21,24 @@ public class BulletinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulletin);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        recarregarDados();
+    }
+
+    private void recarregarDados() {
+        PessoaDAO dao = new PessoaDAO(this);
+        TextView welcome = (TextView) findViewById(R.id.txt_nome_wc);
+        Button cad = (Button) findViewById(R.id.but_cad_pessoa);
+        welcome.setText(dao.setWelcome().toString());
+        //if (welcome.equals("Visitante!")) {
+          //  cad.setVisibility(View.VISIBLE);
+        //}
+    }
     public void nextBol(View v){
-        Intent goToCad = new Intent(this,CadPessoa.class);
+        Intent goToCad = new Intent(this,HorarioActivity.class);
         startActivity(goToCad);
     }
 }
