@@ -9,9 +9,10 @@ import java.util.List;
  * Created by Cicero on 19/03/2016.
  */
 public abstract class Avaliacao {
-    private Materia materia;
-    private DateFormat date;
-    private List<String> conteudo = new ArrayList<>();
+    private int id;
+    private int id_materia;
+    private String date;
+    private List<Conteudo> conteudo = new ArrayList<>();
     private  String obs;
     private String tipo;
     private float nota;
@@ -19,27 +20,38 @@ public abstract class Avaliacao {
 
     }
 
-    public Materia getMateria() {
-        return materia;
-    }
 
-    public void setMateria(Materia materia) {
-        this.materia = materia;
-    }
 
-    public DateFormat getDate() {
+
+    public String getDate() {
         return date;
     }
 
-    public void setDate(DateFormat date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public List<String> getConteudo() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId_materia() {
+        return id_materia;
+    }
+
+    public void setId_materia(int id_materia) {
+        this.id_materia = id_materia;
+    }
+
+    public List<Conteudo> getConteudo() {
         return conteudo;
     }
 
-    public void setConteudo(List<String> conteudo) {
+    public void setConteudo(List<Conteudo> conteudo) {
         this.conteudo = conteudo;
     }
 

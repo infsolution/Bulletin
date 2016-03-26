@@ -37,14 +37,13 @@
 
     <Button
         android:text="@string/bt_cadastro"
-        android:layout_width="28pt"
+        android:layout_width="match_parent"
         android:layout_height="15pt"
-        android:layout_gravity="left"
-        android:textSize="3pt"
+        android:layout_gravity=""
+        android:textSize="10pt"
         android:textStyle="bold"
-        android:textColor="@android:color/holo_green_dark"
+        android:textColor="@android:color/holo_red_dark"
         android:onClick="nextBol"
-        android:background="@android:color/holo_green_light"
-        android:visibility="visible"
+        android:background="@android:color/white"
         />
 </LinearLayout>

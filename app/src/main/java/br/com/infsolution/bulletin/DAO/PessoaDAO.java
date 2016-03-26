@@ -83,6 +83,6 @@ public class PessoaDAO extends SQLiteOpenHelper{
 
     public  void delPessoa(Pessoa pessoa){
         String [] dados = {""+pessoa.getId()};
-        getWritableDatabase().delete("pessoa","id_pessoa = ?",dados);
+        getWritableDatabase().delete("pessoas","id_pessoa = ?",dados);
     }
 }

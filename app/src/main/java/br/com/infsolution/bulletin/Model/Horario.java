@@ -7,19 +7,29 @@ import java.util.List;
  * Created by Cicero on 19/03/2016.
  */
 public class Horario {
-    private List<Materia> materias = new ArrayList<>();
+    private int id;
+    private String turno;
     private List<Aula> aulas = new ArrayList<>();
 
-    public Horario(){
-
+    public Horario(int id, String turno){
+        this.id=id;
+        this.turno=turno;
     }
 
-    public List<Materia> getMaterias() {
-        return materias;
+    public int getId() {
+        return id;
     }
 
-    public void setMaterias(List<Materia> materias) {
-        this.materias = materias;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
     }
 
     public List<Aula> getAulas() {

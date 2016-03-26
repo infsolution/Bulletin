@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.infsolution.bulletin.DAO.PessoaDAO;
+import br.com.infsolution.bulletin.Model.Boletim;
 import br.com.infsolution.bulletin.Model.Pessoa;
 
 public class BulletinActivity extends AppCompatActivity {
@@ -33,11 +34,10 @@ public class BulletinActivity extends AppCompatActivity {
         TextView welcome = (TextView) findViewById(R.id.txt_nome_wc);
         Button cad = (Button) findViewById(R.id.but_cad_pessoa);
         welcome.setText(dao.setWelcome().toString());
-        //if (welcome.equals("Visitante!")) {
-          //  cad.setVisibility(View.VISIBLE);
-        //}
+
     }
     public void nextBol(View v){
+        Boletim boletim =  Boletim.getInstance();
         Intent goToCad = new Intent(this,HorarioActivity.class);
         startActivity(goToCad);
     }
