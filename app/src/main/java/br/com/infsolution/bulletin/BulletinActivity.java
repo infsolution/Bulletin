@@ -26,19 +26,30 @@ public class BulletinActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        recarregarDados();
     }
 
-    private void recarregarDados() {
-        PessoaDAO dao = new PessoaDAO(this);
-        TextView welcome = (TextView) findViewById(R.id.txt_nome_wc);
-        Button cad = (Button) findViewById(R.id.but_cad_pessoa);
-        welcome.setText(dao.setWelcome().toString());
-
+    public void goForCadastro(View v){
+        Intent goToCad = new Intent(this,CadPessoa.class);
+        startActivity(goToCad);
     }
-    public void nextBol(View v){
-        Boletim boletim =  Boletim.getInstance();
+    public void goForAgenda(View v){
+        Intent goToCad = new Intent(this,AgendaActivity.class);
+        startActivity(goToCad);
+    }
+    public void goForHorario(View v){
         Intent goToCad = new Intent(this,HorarioActivity.class);
+        startActivity(goToCad);
+    }
+    public void goForBoletim(View v){
+        Intent goToCad = new Intent(this,BoletimActivity.class);
+        startActivity(goToCad);
+    }
+    public void goForProfile(View v){
+        Intent goToCad = new Intent(this,ProfileActivity.class);
+        startActivity(goToCad);
+    }
+    public void goForMaterias(View v){
+        Intent goToCad = new Intent(this, MateriaActivity.class);
         startActivity(goToCad);
     }
 }

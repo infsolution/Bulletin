@@ -1,11 +1,28 @@
 <resources>
     <string name="app_name">Bulletin</string>
     <string name="txt_titulo">Boletim</string>
-    <string name="txt_welcome">Bem vindo: </string>
+    <string name="txt_welcome">Bem vindo:</string>
     <string name="bt_avancar">Avançar</string>
     <string name="txt_cad_nome">Nome:</string>
     <string name="txt_cad_matr">Matricula:</string>
-    <string name="txt_cad_titulo">Cadastre-se</string>
+    <string name="txt_cad_titulo">Cadastro</string>
     <string name="bt_cadastro">Cadastrar</string>
     <string name="tex_horario">Horario</string>
+    <string name="txt_user">\t Usuario não cadastrado</string>
+    <string name="txt_agenda">Agenda</string>
+    <string name="txt_horario">Horario</string>
+    <string name="txt_boletim">Boletim</string>
+    <string name="txt_profile">Perfil</string>
+    <string name="txt_materias">Materias</string>
+    <string name="item_photo_description">Foto do Aluno</string>
+    <string name="txt_cad_aula_titulo">Cadastrar Aula</string>
+    <string name="txt_nome_materia">Materia:</string>
+    <string name="txt_dia">Dia:</string>
+    <string name="txt_hora">Hora:</string>
+    <string name="hint_materia">Nome da matéria</string>
+    <string name="hint_dia_aula">Dia da aula</string>
+    <string name="hint_hora_aula">Hora da aula</string>
+    <string name="bt_cad_materias">cadastrar</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
+
