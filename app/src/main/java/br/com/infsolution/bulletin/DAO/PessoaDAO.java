@@ -16,7 +16,7 @@ import br.com.infsolution.bulletin.Model.Pessoa;
  */
 public class PessoaDAO extends SQLiteOpenHelper{
     public PessoaDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null, 1);
     }
 
     @Override

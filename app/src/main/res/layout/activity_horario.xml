@@ -16,10 +16,18 @@
         android:textStyle="bold"
         android:textSize="18pt"
         />
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.900"
+        >
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_weight="0.900"
         >
         <TableLayout
             android:layout_width="wrap_content"
@@ -319,12 +327,22 @@
             </TableRow>
         </TableLayout>
     </ScrollView>
-    <Button
-        android:id="@+id/bt_cad_materia"
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bt_cad_materias"
-        android:onClick="cadMaterias"
-        />
+        android:orientation="vertical"
+        android:layout_weight="0.100"
+        >
+
+        <Button
+            android:id="@+id/bt_cad_materia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/bt_cad_materias"
+            android:onClick="cadMaterias"
+            />
+    </LinearLayout>
+
 
 </LinearLayout>

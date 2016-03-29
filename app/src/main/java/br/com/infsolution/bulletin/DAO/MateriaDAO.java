@@ -16,7 +16,7 @@ import br.com.infsolution.bulletin.Model.Materia;
  */
 public class MateriaDAO extends SQLiteOpenHelper {
     public MateriaDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null, 1);
     }
 
     @Override

@@ -31,6 +31,8 @@
         </activity>
         <activity android:name=".BoletimActivity" >
         </activity>
+        <activity android:name=".CadMateriaActivity" >
+        </activity>
     </application>
 
 </manifest>
