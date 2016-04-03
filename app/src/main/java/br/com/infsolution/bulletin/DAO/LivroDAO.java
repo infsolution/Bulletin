@@ -17,30 +17,30 @@ import br.com.infsolution.bulletin.Model.Materia;
  */
 public class LivroDAO extends SQLiteOpenHelper {
     public LivroDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, ControlVersionDB.dbName, null, ControlVersionDB.version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql ="CREATE TABLE livros(" +
-                "id_livro INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "titulo VARCHAR (45), autor VARCHAR (45), assunto TEXT)";
+                "id_livro INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "titulo VARCHAR (45), autor VARCHAR (45), assunto TEXT);";
         db.execSQL(sql);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE IF EXISTS livro_materia;";
+        String sql = "DROP TABLE IF EXISTS livros;";
         db.execSQL(sql);
         onCreate(db);
     }
 
     public void inserir(Livro livro){
         ContentValues ps = new ContentValues();
-        ps.put("id_livro", livro.getId());
         ps.put("titulo",livro.getTitulo());
-        ps.put("autor",livro.getAssunto());
-        getWritableDatabase().insert("livro_materia", null, ps);
+        ps.put("autor",livro.getAutor());
+        ps.put("assunto",livro.getAssunto());
+        getWritableDatabase().insert("livros", null, ps);
     }
 
     public List<Livro> lista(){

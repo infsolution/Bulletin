@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.infsolution.bulletin.LivroActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    ><LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="0.900"
+    >
+    <TextView
+        android:id="@+id/titulo_livro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Livros"
+        android:layout_gravity="center_horizontal"
+        android:textSize="12pt"
+        android:textColor="@android:color/darker_gray"
+        />
+    <ListView
+        android:id="@+id/list_livros"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.100"
+        >
+        <Button
+            android:id="@+id/bt_new_materia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_cadastro"
+            android:onClick="newLivro"
+            />
+    </LinearLayout>
+</LinearLayout>

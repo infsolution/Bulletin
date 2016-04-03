@@ -21,7 +21,7 @@ public class CadAulaActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
     }
-    public void newCadPessoa(View v){
+    public void cadAula(View v){
 
         EditText nomeMat = (EditText)findViewById(R.id.edt_nome_materia);
         EditText diaAula = (EditText)findViewById(R.id.edt_dia_aula);

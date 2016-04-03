@@ -24,5 +24,11 @@
     <string name="hint_hora_aula">Hora da aula</string>
     <string name="bt_cad_materias">cadastrar</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_cad_materia">Cadastrar matéria</string>
+    <string name="txt_nome_professor">Professor:</string>
+    <string name="hint_nome_professor">nome do professor</string>
+    <string name="hint_nome_materia">nome da matéria</string>
+    <string name="image_foto_materia">Materia</string>
+    <string name="txt_title_livro">Livros</string>
 </resources>
 

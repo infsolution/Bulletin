@@ -17,7 +17,7 @@ import br.com.infsolution.bulletin.Model.Conteudo;
  */
 public class ConteudoDAO extends SQLiteOpenHelper{
     public ConteudoDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null, ControlVersionDB.version);
     }
 
     @Override

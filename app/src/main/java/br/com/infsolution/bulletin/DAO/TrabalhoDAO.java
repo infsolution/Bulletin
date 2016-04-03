@@ -17,7 +17,7 @@ import br.com.infsolution.bulletin.Model.Trabalho;
  */
 public class TrabalhoDAO extends SQLiteOpenHelper {
     public TrabalhoDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null, ControlVersionDB.version);
     }
 
     @Override

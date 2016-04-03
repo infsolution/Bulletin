@@ -13,7 +13,7 @@ import br.com.infsolution.bulletin.Model.Boletim;
  */
 public class BoletimDAO extends SQLiteOpenHelper {
     public BoletimDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null, ControlVersionDB.version);
     }
 
     @Override

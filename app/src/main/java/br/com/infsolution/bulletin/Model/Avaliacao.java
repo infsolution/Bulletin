@@ -1,6 +1,5 @@
 package br.com.infsolution.bulletin.Model;
 
-import android.text.format.DateFormat;
 
 import java.util.ArrayList;
 import java.util.List;

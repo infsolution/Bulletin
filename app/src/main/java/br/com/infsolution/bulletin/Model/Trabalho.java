@@ -1,6 +1,6 @@
 package br.com.infsolution.bulletin.Model;
 
-import android.text.format.DateFormat;
+
 
 /**
  * Created by Cicero on 19/03/2016.

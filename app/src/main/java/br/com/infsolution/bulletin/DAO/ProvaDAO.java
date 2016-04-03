@@ -17,7 +17,7 @@ import br.com.infsolution.bulletin.Model.Prova;
  */
 public class ProvaDAO extends SQLiteOpenHelper {
     public ProvaDAO(Context context) {
-        super(context, "Boletim.db", null, 1);
+        super(context, "Boletim.db", null, ControlVersionDB.version);
     }
 
     @Override

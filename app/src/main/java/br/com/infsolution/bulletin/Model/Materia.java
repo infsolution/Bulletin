@@ -1,15 +1,18 @@
 package br.com.infsolution.bulletin.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Cicero on 19/03/2016.
  */
-public class Materia {
+public class Materia implements Serializable {
+    private static final long serialVersionUID = 2L;
     private int id;
     private String nome;
     private String professor;
+    private String foto = "R.drawable.icon_agenda";
     private List<Prova> provas = new ArrayList<>();
     private List<Trabalho> trabalhos = new ArrayList<>();
     private List<String> livros = new ArrayList<>();
@@ -47,6 +50,14 @@ public class Materia {
         this.professor = professor;
     }
 
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
     public List<Prova> getProvas() {
         return provas;
     }
@@ -82,5 +93,8 @@ public class Materia {
         return media;
     }
 
-
+    @Override
+    public String toString() {
+        return getNome()+"\nMedia: "+getMedia();
+    }
 }

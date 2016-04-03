@@ -17,13 +17,13 @@ import br.com.infsolution.bulletin.Model.Materia;
  */
 public class AulaDAO extends SQLiteOpenHelper {
     public AulaDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null,ControlVersionDB.version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table aulas(id_aula INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "materia VARCHAR (45),data VARCHAR (12), dia VARCHAR (10),hora VARCHAR (6)," +
+        String sql = "create table aulas (id_aula INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "materia VARCHAR (45),data VARCHAR (12), dia VARCHAR (10),hora VARCHAR (6), " +
                 "id_horario INTEGER, topicos TEXT, obs TEXT);";
         db.execSQL(sql);
     }

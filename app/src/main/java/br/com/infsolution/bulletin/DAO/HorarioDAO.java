@@ -13,7 +13,7 @@ import br.com.infsolution.bulletin.Model.Horario;
  */
 public class HorarioDAO extends SQLiteOpenHelper {
     public HorarioDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null, ControlVersionDB.version);
     }
 
     @Override

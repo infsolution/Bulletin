@@ -17,15 +17,14 @@ import br.com.infsolution.bulletin.Model.Agenda;
 public class AgendaDAO  extends SQLiteOpenHelper {
 
     public AgendaDAO(Context context) {
-        super(context, "Boletim.db", null, 3);
+        super(context, "Boletim.db", null, ControlVersionDB.version);
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE paginas(id_pagina INTEGER PRIMARY KEY AUTOINCREMENT," +
+        String sql = "CREATE TABLE paginas (id_pagina INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "data VARCHAR (10), titulo VARCHAR (255), assunto TEXT);";
-
         db.execSQL(sql);
     }
 
